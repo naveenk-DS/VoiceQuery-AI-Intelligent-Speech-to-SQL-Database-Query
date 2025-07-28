@@ -3,7 +3,7 @@ from speech_to_text import recognize_speech
 from sql_generator import natural_language_to_sql
 from query_parser import execute_sql_query
 from speech_to_text import recognize_speech_from_audio
-from speech_to_text import recognize_speech
+
 
 
 audio_file = st.file_uploader("Upload Audio", type=["wav", "mp3"])
