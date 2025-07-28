@@ -2,6 +2,8 @@
 
 import speech_recognition as sr
 from googletrans import Translator
+import cgi
+
 
 def recognize_speech(language_code='en-US'):
     r = sr.Recognizer()
