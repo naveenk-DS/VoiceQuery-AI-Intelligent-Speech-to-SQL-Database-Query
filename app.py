@@ -6,7 +6,11 @@ from speech_to_text import recognize_speech_from_audio
 from speech_to_text import recognize_speech
 
 
+audio_file = st.file_uploader("Upload Audio", type=["wav", "mp3"])
 
+if audio_file is not None:
+    text = recognize_speech_from_audio(audio_file)
+    st.write("Recognized Text:", text)
 st.set_page_config(page_title="VoiceQuery AI", layout="wide")
 st.title("🎤 VoiceQuery AI: Speak to SQL")
 
