@@ -20,4 +20,8 @@ if st.button("🎙️ Start Voice Input"):
         result = execute_sql_query(sql)
         st.write("📊 Query Result:")
         st.dataframe(result)
-
+uploaded_audio = st.file_uploader("Upload audio file", type=["wav", "mp3"])
+if uploaded_audio:
+    with open("temp.wav", "wb") as f:
+        f.write(uploaded_audio.read())
+    input_text = recognize_speech_from_audio("temp.wav", language_code=lang)
