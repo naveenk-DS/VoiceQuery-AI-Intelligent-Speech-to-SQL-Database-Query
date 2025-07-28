@@ -1,24 +1,20 @@
+# speech_to_text.py
+
 import speech_recognition as sr
-import tempfile
-import os
 
-def recognize_speech_from_audio(audio_file, language_code='en-US'):
-    r = sr.Recognizer()
-    
-    # Save uploaded audio to a temp WAV file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_audio:
-        temp_audio.write(audio_file.read())
-        temp_audio_path = temp_audio.name
+def recognize_speech(language_code='en-US'):
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("🎤 Speak now...")
+        audio = recognizer.listen(source)
 
-    with sr.AudioFile(temp_audio_path) as source:
-        audio = r.record(source)
-    
     try:
-        text = r.recognize_google(audio, language=language_code)
+        text = recognizer.recognize_google(audio, language=language_code)
+        print(f"✅ Recognized: {text}")
         return text
     except sr.UnknownValueError:
-        return "Could not understand audio."
-    except sr.RequestError:
-        return "Speech recognition service unavailable."
-    finally:
-        os.remove(temp_audio_path)
+        print("❌ Speech not understood.")
+        return "Could not understand audio"
+    except sr.RequestError as e:
+        print(f"❌ Error with the request: {e}")
+        return "Speech recognition error"
