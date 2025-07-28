@@ -1,0 +1,7 @@
+voicequery_ai/
+├── app.py                  ✅ main Streamlit UI
+├── speech_to_text.py       ✅ this file defines recognize_speech
+├── sql_generator.py        ✅ for NLP to SQL
+├── query_parser.py         ✅ to run SQL
+├── database.db             ✅ sample DB
+├── requirements.txt
