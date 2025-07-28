@@ -1,0 +1,25 @@
+# Run this once to create database
+import sqlite3
+
+conn = sqlite3.connect("database.db")
+cursor = conn.cursor()
+
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS students (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    gender TEXT,
+    marks INTEGER,
+    grade TEXT
+)
+''')
+
+cursor.executemany("INSERT INTO students (name, gender, marks, grade) VALUES (?, ?, ?, ?)", [
+    ("Alice", "F", 85, "A"),
+    ("Bob", "M", 75, "B"),
+    ("Charlie", "M", 90, "A"),
+    ("Diana", "F", 60, "C")
+])
+
+conn.commit()
+conn.close()
