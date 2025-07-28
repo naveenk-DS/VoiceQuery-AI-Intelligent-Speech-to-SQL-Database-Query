@@ -1,6 +1,6 @@
 import speech_recognition as sr
 
-def recognize_speech_from_audio(audio_file, language_code="en-IN"):
+def recognize_speech_from_audio(audio_file, language_code="en-US"):
     recognizer = sr.Recognizer()
     with sr.AudioFile(audio_file) as source:
         audio = recognizer.record(source)
