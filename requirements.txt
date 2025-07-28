@@ -4,3 +4,5 @@ googletrans==4.0.0-rc1
 openai
 pandas
 sqlalchemy
+pyaudio
+httpx==0.24.1
