@@ -2,6 +2,9 @@ import streamlit as st
 from speech_to_text import recognize_speech
 from sql_generator import natural_language_to_sql
 from query_parser import execute_sql_query
+from speech_to_text import recognize_speech_from_audio
+from speech_to_text import recognize_speech
+
 
 
 st.set_page_config(page_title="VoiceQuery AI", layout="wide")
