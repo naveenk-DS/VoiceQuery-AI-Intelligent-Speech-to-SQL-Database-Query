@@ -1,32 +1,15 @@
-# sql_generator.py
+def natural_language_to_sql(user_input):
+    user_input = user_input.lower()
 
-import re
-
-def natural_language_to_sql(query):
-    query = query.lower()
-
-    if "show all" in query or "list all" in query:
-        return "SELECT * FROM students"
-
-    elif "average" in query:
-        return "SELECT AVG(score) FROM students"
-
-    elif "count" in query:
-        return "SELECT COUNT(*) FROM students"
-
-    elif "name" in query:
-        return "SELECT name FROM students"
-
-    elif "greater than" in query:
-        match = re.search(r"greater than (\d+)", query)
-        if match:
-            value = match.group(1)
-            return f"SELECT * FROM students WHERE score > {value}"
-
-    elif "less than" in query:
-        match = re.search(r"less than (\d+)", query)
-        if match:
-            value = match.group(1)
-            return f"SELECT * FROM students WHERE score < {value}"
-
-    return "SELECT * FROM students"
+    if "total students" in user_input:
+        return "SELECT COUNT(*) FROM students;"
+    elif "average score" in user_input:
+        return "SELECT AVG(score) FROM students;"
+    elif "passed" in user_input:
+        return "SELECT * FROM students WHERE score >= 40;"
+    elif "failed" in user_input:
+        return "SELECT * FROM students WHERE score < 40;"
+    elif "all students" in user_input:
+        return "SELECT * FROM students;"
+    else:
+        return "SELECT * FROM students LIMIT 5;"  # fallback
