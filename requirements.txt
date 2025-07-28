@@ -1,8 +1,8 @@
 streamlit
-SpeechRecognition
-googletrans==4.0.0-rc1
+speechrecognition
 openai
-pandas
-sqlalchemy
-pyaudio
-httpx==0.24.1
+sqlite3  # Optional; built-in in Python 3.x
+googletrans==4.0.0rc1
+transformers
+torch
+sentencepiece
