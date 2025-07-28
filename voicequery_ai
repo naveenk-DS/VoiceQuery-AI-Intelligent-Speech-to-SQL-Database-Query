@@ -1,7 +1,10 @@
-voicequery_ai/
-├── app.py                  ✅ main Streamlit UI
-├── speech_to_text.py       ✅ this file defines recognize_speech
-├── sql_generator.py        ✅ for NLP to SQL
-├── query_parser.py         ✅ to run SQL
-├── database.db             ✅ sample DB
+voicequery-ai-intelligent-speech-to-sql-database-query/
+├── app.py
+├── speech_to_text.py
+├── sql_generator.py
+├── query_parser.py
+├── database.db
 ├── requirements.txt
+├── .streamlit/
+│   └── config.toml           ✅ Optional, for Streamlit settings
+├── runtime.txt               ✅ IMPORTANT → tells Streamlit to use Python 3.10
