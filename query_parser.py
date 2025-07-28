@@ -1,15 +1,12 @@
-# query_parser.py
-
 import sqlite3
+import pandas as pd
 
-def execute_sql_query(query, db_path="database.db"):
+def execute_sql_query(query):
+    conn = sqlite3.connect("database.db")
     try:
-        conn = sqlite3.connect(db_path)
-        cursor = conn.cursor()
-        cursor.execute(query)
-        rows = cursor.fetchall()
-        conn.commit()
-        conn.close()
-        return rows
+        df = pd.read_sql_query(query, conn)
+        return df
     except Exception as e:
-        return f"Error: {e}"
+        return pd.DataFrame({"error": [str(e)]})
+    finally:
+        conn.close()
