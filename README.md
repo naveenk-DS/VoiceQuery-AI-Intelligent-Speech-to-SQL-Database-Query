@@ -1,0 +1,1 @@
+# VoiceQuery-AI-Intelligent-Speech-to-SQL-Database-Query
