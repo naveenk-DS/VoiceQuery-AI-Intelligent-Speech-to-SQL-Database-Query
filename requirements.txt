@@ -3,10 +3,5 @@ pandas
 numpy
 matplotlib
 seaborn
-speechrecognition
-openai
-sqlite3 
-googletrans==4.0.0rc1
-transformers
-torch
-sentencepiece
+scikit-learn
+
