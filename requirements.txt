@@ -1,7 +1,11 @@
 streamlit
+pandas
+numpy
+matplotlib
+seaborn
 speechrecognition
 openai
-sqlite3  # Optional; built-in in Python 3.x
+sqlite3 
 googletrans==4.0.0rc1
 transformers
 torch
