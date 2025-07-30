@@ -1,8 +1,10 @@
 streamlit
 pandas
 numpy
-speechrecognition
-pyaudio
 openai
 sqlalchemy
+speechrecognition
+# Optional:
+# pyaudio
+
 
