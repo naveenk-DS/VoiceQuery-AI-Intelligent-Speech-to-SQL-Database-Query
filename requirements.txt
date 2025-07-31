@@ -5,6 +5,6 @@ openai
 sqlalchemy
 speechrecognition
 # Optional:
-# pyaudio
+pyaudio
 
 
